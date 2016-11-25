@@ -38,9 +38,9 @@ class dovecot::ldap (
   file { '/etc/dovecot/conf.d/auth-ldap.conf.ext':
     ensure  => present,
     content => template('dovecot/auth-ldap.conf.ext'),
-    mode    => '0600',
+    mode    => '0644',
     owner   => root,
-    group   => dovecot,
+    group   => root,
     before  => Exec['dovecot'],
   }
 
